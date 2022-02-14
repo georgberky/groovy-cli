@@ -13,8 +13,8 @@ References:
 - [Groovy API][4]
 - [Groovy JDK extensions][5]
 
-[1]: https://blog.nevercodealone.de/groovy-shell-scripting-teil-1/
-[2]: https://blog.nevercodealone.de/groovy-shell-scripting-pipes-und-fifos-teil-2/ 
-[3]: https://blog.nevercodealone.de/groovy-shell-scripting-testing-teil-3/
-[4]: http://docs.groovy-lang.org/latest/html/gapi/
-[5]: http://groovy-lang.org/gdk.html
+[1]: https://georg.berky.dev/blog/2018-09-14-getting-groovy/
+[2]: https://georg.berky.dev/blog/2018-11-01-pipes/
+[3]: https://georg.berky.dev/blog/2018-12-13-testing/
+[4]: https://docs.groovy-lang.org/latest/html/gapi/
+[5]: https://groovy-lang.org/gdk.html
