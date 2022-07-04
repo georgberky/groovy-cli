@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Grab('info.picocli:picocli-groovy:4.2.0')
+@Grab('info.picocli:picocli-groovy:4.6.3')
 @GrabConfig(systemClassLoader=true)
 import groovy.cli.commons.CliBuilder
 
