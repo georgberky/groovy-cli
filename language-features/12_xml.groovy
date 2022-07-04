@@ -3,7 +3,9 @@ import java.util.zip.*
 import groovy.xml.XmlSlurper
 
 def xmlInput = new ZipFile("standard.xml.zip" as File)
-def site = new XmlSlurper().parse(xmlInput.getInputStream(new ZipEntry("standard.xml")))
+def site = new XmlSlurper().parse(
+    xmlInput.getInputStream(new ZipEntry("standard.xml"))
+)
 
 site.regions.children().each { region ->
     println region.name()
