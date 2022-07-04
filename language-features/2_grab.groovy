@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 //use @Grab on annotation
 //grab commons-lang3
 //show something like joining Strings
