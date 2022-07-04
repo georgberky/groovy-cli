@@ -1,11 +1,21 @@
 #!/usr/bin/env groovy
-@Grab('info.picocli:picocli-groovy:4.6.3')
-@GrabConfig(systemClassLoader=true)
-import groovy.cli.commons.CliBuilder
 
 //show how to add command line options
 //add unquote option
-def cli = new CliBuilder()
+
+/*
+    for picocli:
+
+    @Grab('info.picocli:picocli-groovy:4.6.3')
+    @GrabConfig(systemClassLoader=true)
+    import groovy.cli.commons.CliBuilder
+    def cli = new CliBuilder()
+*/
+
+import groovy.cli.internal.CliBuilderInternal
+
+def cli = new CliBuilderInternal()
+
 cli.h(longOpt: 'help', 'Show usage information')
 cli.u(longOpt: 'unquote', 'Unquote the piped text')
 cli.q(longOpt: 'quote', 'Quote the piped text')
