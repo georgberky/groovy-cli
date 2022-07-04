@@ -1,5 +1,6 @@
 #!/usr/bin/env groovy
-@Grab('org.codehaus.groovy:groovy-cli-commons:2.5.7')
+@Grab('info.picocli:picocli-groovy:4.2.0')
+@GrabConfig(systemClassLoader=true)
 import groovy.cli.commons.CliBuilder
 
 //show how to add command line options
