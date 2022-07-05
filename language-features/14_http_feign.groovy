@@ -4,6 +4,8 @@
 @Grab('io.github.openfeign:feign-gson:11.9')
 import feign.*
 import feign.gson.GsonDecoder
+import com.google.gson.*
+import static com.google.gson.FieldNamingPolicy.*
 
 interface SWApi {
     @RequestLine("GET /api/people/{id}/")
@@ -12,16 +14,20 @@ interface SWApi {
 
 class Person {
     String name
-    String hair_color
-    String eye_color
+    String hairColor
+    String eyeColor
 }
 
 def client = Feign.builder()
-    .decoder(new GsonDecoder())
+    .decoder(new GsonDecoder(
+        new GsonBuilder()
+            .setFieldNamingPolicy(LOWER_CASE_WITH_UNDERSCORES)
+            .create()
+    ))
     .target(SWApi, "https://swapi.dev")
 
 def person = client.person(1)
 
 println person.name
-println person.hair_color
-println person.eye_color
+println person.hairColor
+println person.eyeColor
