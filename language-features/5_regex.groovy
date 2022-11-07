@@ -1,9 +1,9 @@
 #!/usr/bin/env groovy
-//show simple string matching using ==~
-//readLines lorem.txt
-//grep
-//print
+//TODO 
+// - filter lines of lorem.txt
+// - use ==~ (whole line)
+// - use =~ (contained)
 
 assert "foobar" =~ /oo/ 
-assert "foo123\\ " =~ /\d+\\\s/
+assert "foo123\\ " ==~ /^\w+\d+\\\s/
 

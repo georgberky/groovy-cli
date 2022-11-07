@@ -3,6 +3,6 @@ class Prototype {
 
     @RequestMapping("/")
     String home() {
-        return "Hello Softwerkskammer!"
+        return "Hello Developer Week 2022"
     }
 }

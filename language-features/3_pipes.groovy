@@ -1,20 +1,8 @@
 #!/usr/bin/env groovy
 
-//traditional, Java-like solution
-/*
-for(String line : System.in.readLines()) {
-    if(line.contains("groovy")) {
-        println line
-    }
-}
-*/
-
-//produces a Writable (with an additonal line), so we can print it directly
-//println System.in.filterLine { it.contains("groovy") }
-
-//this is the closest equivalent to grep
-System.in.eachLine { line->
-    if(line.contains("groovy")) {
-        println line
-    }
-}
+//TODO:
+// - show traditional Java: System.in.readLines()
+// - show Groovy's System.in.eachLine
+// - show Groovy's System.in.filterLine
+System.in.filterLine { it.contains(args[0]) }
+    .each { println it }

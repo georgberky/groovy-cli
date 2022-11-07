@@ -1,9 +1,9 @@
 import org.junit.jupiter.api.Test
+import static org.junit.jupiter.api.Assertions.*
 
 class MyTest {
-
     @Test
-    void myTest() {
-        assert 1 + 1 == 3
+    void "my first test"() {
+        assert 2 + 2 == 5
     }
 }
