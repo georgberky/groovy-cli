@@ -2,3 +2,4 @@
 # Add key=value pairs of SDKs to use below
 java=17.0.2.8.1-amzn
 groovy=4.0.3
+springboot=2.7.15
