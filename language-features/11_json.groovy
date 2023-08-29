@@ -1,9 +1,15 @@
 #!/usr/bin/env groovy
 import groovy.json.JsonSlurper
 
-def input = new FileReader("planet.json" as File)
-def planet = new JsonSlurper().parse(input)
+// show planet.json
+// read file into JsonSlurper
+// print planet name
+// print panet.terrain
+// print all planet residents
 
+def planet = new JsonSlurper().parse("planet.json" as File)
 println planet.name
-println planet.terrain
-planet.residents.each { println it }
+
+planet.residents.each {
+    println it
+}

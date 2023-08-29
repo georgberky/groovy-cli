@@ -1,24 +1,16 @@
 #!/usr/bin/env groovy
 
-//show how to add command line options
-//add unquote option
-
-/*
-    for picocli:
-
-    @Grab('info.picocli:picocli-groovy:4.6.3')
-    @GrabConfig(systemClassLoader=true)
-    import groovy.cli.commons.CliBuilder
-    def cli = new CliBuilder()
-*/
+// show how to add command line options
+// add quote option
+// add unquote option
 
 import groovy.cli.internal.CliBuilderInternal
 
 def cli = new CliBuilderInternal()
 
 cli.h(longOpt: 'help', 'Show usage information')
-cli.u(longOpt: 'unquote', 'Unquote the piped text')
-cli.q(longOpt: 'quote', 'Quote the piped text')
+cli.q(longOpt: 'quote', 'Quote some text')
+cli.u(longOpt: 'unquote', 'Unquote some text')
 
 def options = cli.parse(args)
 
@@ -27,18 +19,12 @@ if (!args || options.h) {
     return
 }
 
-if (options.u && options.q) {
-    println "Use either quote or unquote"
-    cli.usage()
-    return
+if(options.q) {
+    System.in.readLines()
+        .each { println "> ${it}"}
 }
 
-System.in.eachLine {line ->
-    def startsWithQuote = line.startsWith(">")
-
-    if (options.u && startsWithQuote) {
-        println line.substring(1).trim()
-    } else if (options.q){
-        println ">${startsWithQuote ? "" : " "}${line}"
-    }
+if(options.u) {
+    System.in.readLines()
+        .each { println it.substring(2) }
 }

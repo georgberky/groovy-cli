@@ -7,10 +7,12 @@ def site = new XmlSlurper().parse(
     xmlInput.getInputStream(new ZipEntry("standard.xml"))
 )
 
-site.regions.children().each { region ->
-    println region.name()
-
-    region.item.collect { [name: "${it.name.text().trim()}", to: "${it.location.text().trim()}"] }
-               .each { println "${it.name} -> ${it.to}" }
+site.regions.children().each {
+    println it.name()
 }
 
+// show the contents of the zip file
+// show the problem with regions 
+// show how to read the file into the slurper
+// show how to access XML objects
+// print all region names

@@ -1,9 +1,13 @@
 import org.junit.jupiter.api.Test
 
-class MyTest {
+// add a class
+// add a test method with @Test
+// show Strings as method names
+// show power assert
 
+class MyJunit5Test {
     @Test
-    void myTest() {
+    void "a method name can be a string in Groovy"() {
         assert 1 + 1 == 3
     }
 }
